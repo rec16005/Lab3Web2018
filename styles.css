@@ -1,0 +1,102 @@
+body{
+  background: #111111;
+}
+
+.filters{
+  align-items: center;
+  justify-content: center;
+  display: flex; 
+  flex-direction: row;
+  flex-flow: row wrap;
+  height: 5rem;
+  margin: 1rem; 
+  padding: 0rem;
+  width: 80em;
+}
+
+.filt{
+  background: #eeeeee;
+  border-color: #111111;
+  border-radius: 1rem;
+  cursor: pointer;
+  height: 4rem;
+  transition-delay: 2ms;
+  width: 20rem;
+}
+
+.filt:hover{
+  background: lightblue;
+}
+
+.filt:active{
+  background: gray;
+  border-color: black;
+}
+
+.tasksdiv{
+  align-items: center;
+  background: lightgoldenrodyellow;
+  border-radius: 1rem;
+  display: flex; 
+  flex-direction: column;
+  flex-flow: column wrap;
+  height: 25rem;
+  margin: 1rem; 
+  overflow-y: auto;
+  padding: 0rem;
+  width: 80rem;
+}
+
+.addbar{
+  align-items: center;
+  background: lightgrey;
+  border-radius: 1rem;
+  justify-content: center;
+  display: flex; 
+  flex-direction: row;
+  flex-flow: row wrap;
+  height: 5rem;
+  margin: 1rem; 
+  padding: 0rem;
+  width: 80rem;
+}
+
+.btnadd{
+  background: #eeeeee;
+  border-radius: 1rem;
+  cursor: pointer;
+  height: 2rem;
+  transition-delay: 2ms;
+  width: 15rem;
+}
+
+.btnadd:hover{
+  background: lightblue;
+}
+
+.btnadd:active{
+  background: gray;
+}
+
+.addtext{
+  border-radius: 1rem;
+  height: 2rem;
+  width: 40rem;
+}
+
+.taskname{
+  border-radius: 1rem;
+  height: 3rem;
+  margin: 0.3rem;
+  width: 90%;
+}
+
+.taskname.false{
+  background: lightcoral;
+  border-color: lightcoral;
+}
+
+.taskname.true{
+  background: lightgreen;
+  border-color: lightgreen; 
+}
