@@ -40,6 +40,19 @@ const render = lState =>  {
   filters.appendChild(filt2);
   filters.appendChild(filt3);
 
+  filt1.onclick = () => {
+    state.currFilter = 0;
+    render(state);
+  }
+  filt2.onclick = () => {
+    state.currFilter = 1;
+    render(state);
+  }
+  filt3.onclick = () => {
+    state.currFilter = 2;
+    render(state);
+  }
+
   const tasksdiv = document.createElement('div');
   tasksdiv.className = 'tasksdiv';
 
@@ -60,12 +73,40 @@ const render = lState =>  {
   addbar.appendChild(addtext);
   addbar.appendChild(btnadd);
 
-  for (let i = 0; i < state.tasks.length; i += 1) {
-    const newtask = document.createElement('button');
-    newtask.className = `taskname ${state.tasks[i][1]}`;
-    newtask.id = `taskname ${i}`;
-    newtask.innerHTML = state.tasks[i][0];
-    tasksdiv.appendChild(newtask);
+  btnadd.onclick = () => {
+    state.tasks.push([addtext.value, false])
+    render(state);
+  }
+
+  if (state.currFilter == 0){
+    for (let i = 0; i < state.tasks.length; i +=1){
+      const newtask = document.createElement('button');
+      newtask.className = `taskname ${state.tasks[i][1]}`;
+      newtask.innerHTML = state.tasks[i][0];
+      tasksdiv.appendChild(newtask);
+    }
+  }
+
+  if (state.currFilter == 1){
+    for (let i = 0; i < state.tasks.length; i +=1){
+      if (state.tasks[i][1] == true){
+        const newtask = document.createElement('button');
+        newtask.className = `taskname ${state.tasks[i][1]}`;
+        newtask.innerHTML = state.tasks[i][0];
+        tasksdiv.appendChild(newtask);
+      }
+    }
+  }
+
+  if (state.currFilter == 2){
+    for (let i = 0; i < state.tasks.length; i +=1){
+      if (state.tasks[i][1] == false){
+        const newtask = document.createElement('button');
+        newtask.className = `taskname ${state.tasks[i][1]}`;
+        newtask.innerHTML = state.tasks[i][0];
+        tasksdiv.appendChild(newtask);
+      }
+    }
   }
 
 }
